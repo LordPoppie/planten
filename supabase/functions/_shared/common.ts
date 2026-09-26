@@ -36,3 +36,9 @@ export async function readImage(req: Request) {
   if (image.length > 6_000_000) throw new Error("Afbeelding te groot (max ~4 MB)");
   return { image, media_type: media_type as (typeof types)[number] };
 }
+
+/** Opties voor de Anthropic-client; stuurt het workspace-ID mee als de sleutel niet workspace-gebonden is. */
+export function anthropicOptions() {
+  const workspace = Deno.env.get("ANTHROPIC_WORKSPACE_ID");
+  return workspace ? { defaultHeaders: { "anthropic-workspace-id": workspace } } : {};
+}

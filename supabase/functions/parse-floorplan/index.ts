@@ -2,9 +2,9 @@
 import Anthropic from "npm:@anthropic-ai/sdk";
 import { zodOutputFormat } from "npm:@anthropic-ai/sdk/helpers/zod";
 import { z } from "npm:zod";
-import { cors, json, readImage, requireUser } from "../_shared/common.ts";
+import { anthropicOptions, cors, json, readImage, requireUser } from "../_shared/common.ts";
 
-const client = new Anthropic();
+const client = new Anthropic(anthropicOptions()); // ANTHROPIC_API_KEY (+ optioneel ANTHROPIC_WORKSPACE_ID) uit de function secrets
 
 const Point = z.object({ x: z.number(), y: z.number() });
 const Floorplan = z.object({
