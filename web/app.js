@@ -843,9 +843,9 @@ function viewNewLocation() {
 function viewLogin() {
   app.innerHTML = `<div class="login"><div class="card">
     <div class="logo">🪴</div><h1>Planten</h1>
-    <p class="sub">Log in met je e-mail. Je krijgt een code, geen wachtwoord nodig.</p>
+    <p class="sub">Log in met je e-mail. Je krijgt een link (of code), geen wachtwoord nodig.</p>
     <form id="f"><input type="email" id="email" required placeholder="jij@voorbeeld.nl" autocomplete="email">
-    <button class="btn primary block" style="margin-top:12px">Stuur code</button></form>
+    <button class="btn primary block" style="margin-top:12px">Stuur inlogmail</button></form>
     <form id="c" class="hidden"><input type="text" id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 cijfers uit de mail" style="text-align:center;font-size:22px;letter-spacing:.3em">
     <button class="btn primary block" style="margin-top:12px">Inloggen</button></form>
     <p id="msg" class="small muted"></p></div></div>`;
@@ -856,7 +856,7 @@ function viewLogin() {
     $("#f").classList.add("hidden");
     $("#c").classList.remove("hidden");
     $("#code").focus();
-    $("#msg").textContent = "Check je mail en typ de code hier in. (De link in de mail werkt ook, maar opent in Safari in plaats van in de app.)";
+    $("#msg").textContent = "Check je mail: tik op de link, of typ hier de code als die in de mail staat.";
   };
   $("#c").onsubmit = async (e) => {
     e.preventDefault();
