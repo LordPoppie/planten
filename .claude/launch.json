@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "planten-web", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "5178", "--directory", "web"], "port": 5178 }
+  ]
+}

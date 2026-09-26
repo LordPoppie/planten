@@ -1,0 +1,8 @@
+# Functies controleren zelf het JWT (compatibel met de nieuwe publishable keys);
+# send-reminders wordt door pg_cron aangeroepen met x-cron-secret.
+[functions.identify-plant]
+verify_jwt = false
+[functions.parse-floorplan]
+verify_jwt = false
+[functions.send-reminders]
+verify_jwt = false
