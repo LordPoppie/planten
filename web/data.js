@@ -73,6 +73,9 @@ const remote = {
   signIn(email) {
     return sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
   },
+  verifyCode(email, token) {
+    return sb.auth.verifyOtp({ email, token, type: "email" });
+  },
   signOut() {
     return sb.auth.signOut();
   },
@@ -281,6 +284,7 @@ const demo = {
   async session() { return { user: { id: "demo", email: "demo@planten.local" } }; },
   onAuth() {},
   async signIn() { return {}; },
+  async verifyCode() { return { data: { session: await demo.session() } }; },
   async signOut() { localStorage.removeItem(KEY); },
 
   async locations() { return clone(load().locations); },

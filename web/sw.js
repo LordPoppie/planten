@@ -1,5 +1,5 @@
 // Service worker: app-shell offline + pushmeldingen.
-const CACHE = "planten-v1";
+const CACHE = "planten-v2";
 const SHELL = ["./", "index.html", "styles.css", "app.js", "data.js", "config.js", "manifest.webmanifest", "icons/icon-192.png"];
 
 self.addEventListener("install", (e) => {
